@@ -13,6 +13,11 @@ defined( 'ABSPATH' ) || exit;
 
     <!-- wp_head begin -->
     <?php wp_head(); ?>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- wp_head end -->
   </head>
   <body <?php body_class(); ?> >
@@ -40,34 +45,11 @@ defined( 'ABSPATH' ) || exit;
           <a class="skip-link visually-hidden-focusable" href="#theme-main"><?php esc_html_e( 'Skip to content', 'picostrap' ); ?></a>
 
           
-          <nav class="navbar <?php echo get_theme_mod('picostrap_header_navbar_expand','navbar-expand-lg'); ?> <?php echo get_theme_mod('picostrap_header_navbar_position')." ". get_theme_mod('picostrap_header_navbar_color_scheme','navbar-dark').' '. get_theme_mod('picostrap_header_navbar_color_choice','bg-dark'); ?>" aria-label="Main Navigation" >
-            <div class="container">
-              <div id="logo-tagline-wrap">
-                  <!-- Your site title as branding in the menu -->
-                  <?php if ( ! has_custom_logo() ) { ?>
-
-                    <?php if ( is_front_page() && is_home() ) : ?>
-
-                      <div class="navbar-brand mb-0 h3"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></div>
-
-                    <?php else : ?>
-
-                      <a class="navbar-brand mb-0 h3" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
-
-                    <?php endif; ?>
-
-
-                  <?php } else {
-                    the_custom_logo();
-                  } ?><!-- end custom logo -->
-
-                
-                  <?php if (!get_theme_mod('header_disable_tagline')): ?>
-                    <small id="top-description" class="text-muted d-none d-md-block mt-n2">
-                      <?php bloginfo("description") ?>
-                    </small>
-                  <?php endif ?>
-              
+          <nav class="navbar navbar-expand-lg bg-transparent px-5 pt-4"  aria-label="Main Navigation" >
+            <div class="container-fluid">
+                 <div id="logo-tagline-wrap p-3">
+                 
+                    <img  src="<?php echo get_template_directory_uri(); ?>/imgs/logo.png" alt="" width="160" height="82">
               
                   </div> <!-- /logo-tagline-wrap -->
 
@@ -78,22 +60,22 @@ defined( 'ABSPATH' ) || exit;
               </button>
 
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <?php 
-                  wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'container' => false,
-                    'menu_class' => '',
-                    'fallback_cb' => '__return_false',
-                    'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
-                    'walker' => new bootstrap_5_wp_nav_menu_walker()
-                ));
-                ?>
-                
-                <?php if (get_theme_mod('enable_search_form')): ?>
-                  <form action="<?php echo bloginfo('url') ?>" method="get" id="header-search-form">
-                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="s" value="<?php the_search_query(); ?>">
-                  </form> 
-                <?php endif ?>
+                    <?php 
+                      wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'container' => false,
+                        'menu_class' => '',
+                        'fallback_cb' => '__return_false',
+                        'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
+                        'walker' => new bootstrap_5_wp_nav_menu_walker()
+                    ));
+                    ?>
+                    
+                    <?php if (get_theme_mod('enable_search_form')): ?>
+                      <form action="<?php echo bloginfo('url') ?>" method="get" id="header-search-form">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="s" value="<?php the_search_query(); ?>">
+                      </form> 
+                    <?php endif ?>
 
               </div> <!-- .collapse -->
             </div> <!-- .container -->
