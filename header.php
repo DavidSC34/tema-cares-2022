@@ -48,8 +48,9 @@ defined( 'ABSPATH' ) || exit;
           <nav class="navbar navbar-expand-lg bg-transparent px-5 pt-4"  aria-label="Main Navigation" >
             <div class="container-fluid">
                  <div id="logo-tagline-wrap p-3">
-                 
-                    <img  src="<?php echo get_template_directory_uri(); ?>/imgs/logo.png" alt="" width="160" height="82">
+                    <a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">                    
+                      <img  src="<?php echo get_template_directory_uri(); ?>/imgs/logo.png" alt="" width="160" height="82">
+                    </a>
               
                   </div> <!-- /logo-tagline-wrap -->
 
