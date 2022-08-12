@@ -45,7 +45,7 @@ defined( 'ABSPATH' ) || exit;
           <a class="skip-link visually-hidden-focusable" href="#theme-main"><?php esc_html_e( 'Skip to content', 'picostrap' ); ?></a>
 
           
-          <nav class="navbar navbar-expand-lg bg-transparent px-5 pt-4"  aria-label="Main Navigation" >
+          <nav class=" navbar navbar-expand-lg bg-transparent px-5 pt-4"  aria-label="Main Navigation" >
             <div class="container-fluid">
                  <div id="logo-tagline-wrap p-3">
                     <a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">                    
@@ -56,7 +56,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
 

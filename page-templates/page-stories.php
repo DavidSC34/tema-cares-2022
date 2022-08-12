@@ -12,8 +12,8 @@ get_header();
 ?>
 <section>
     <div class="py-6">
-        <div class="container text-left">
-            <h1 class="titulo-1"><?php the_title(); ?></h1>
+        <div class="container ">
+            <h1 class="stories-title"><?php the_title(); ?></h1>
             <p class="paragraph"><?php the_field('subtitle'); ?></p>            
         </div>
     </div>
@@ -22,7 +22,7 @@ get_header();
 <section>
             <div class="container">
             
-                        <div class="row">
+                        <div class="row ">
                             <div class="col-xl-12">
                                 <div class="stories-menu d-flex ">
                                         <button data-filter="*" class="btn btn-outline-success me-5 text-capitalize">all</button>
@@ -33,7 +33,9 @@ get_header();
                                         <?php } ?>
                                     </div>
                                 <hr>
-                        </div> 
+                            </div>                             
+                        </div>
+                        
             </div> 
             <div class="container">
                         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mt-4 mb-4 grid">
